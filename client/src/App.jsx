@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import "dotenv/config";
+
 
 export default function App() {
   const [url, setUrl] = useState('');
@@ -17,7 +19,7 @@ export default function App() {
     setQrCode('');
 
     try {
-      const response = await axios.post('http://localhost:5000/generate', {
+      const response = await axios.post(`${process.env.BACKEND_URL}/generate`, {
         text: url
       });
       setQrCode(response.data.qrCodeUrl);
