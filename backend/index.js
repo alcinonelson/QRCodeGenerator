@@ -11,10 +11,7 @@ app.use(express.json());
 const PORT = process.env.PORT;
 
 app.get('/', async (req, res) => {
-  res.send({
-    activeStatus: true,
-    error: false,
-  });
+  res.send("API is working perfectly");
 });
 
 app.listen(PORT, () => {
